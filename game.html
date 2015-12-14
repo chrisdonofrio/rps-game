@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/animations.css">
-	<title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <title></title>
 </head>
+
 <body>
 
-	<div class="container">
-		<div class="row">
-      		<div class="col-md-3">
-        		<br />
-        		<button class="btn btn-danger btn-block btn-tracker" data-tag="rock"><i class="fa fa-hand-rock-o fa-5x"></i></button>
-      		</div>
-      		<div class="col-md-3">
-        		<br />
-       		<button class="btn btn-warning btn-block btn-tracker" data-tag="paper"><i class="fa fa-hand-paper-o fa-5x"></i></button>
-      		</div>
-      		<div class="col-md-3">
-        		<br />
-        	<button class="btn btn-success btn-block btn-tracker" data-tag="scissors"><i class="fa fa-hand-scissors-o fa-5x"></i></button>
-      		</div>
-      		<div class="col-md-3" id="start-stop">
-        		<p>START!</p>
-        		<br />
-        	<button class="btn btn-default btn-block" data-tag="start" data-state="off"<i class="fa fa-play fa-2x"></i></button>
-        	</div>
-<div class="row">
-<div class="col-md-6">
-<h2>Scoreboard</h2>
-</div>
-<div class="col-md-6">
-<strong>Round #: </strong><span id="roundCount">0</span>
-<br />
-<strong>You: </strong><span id="userScore">0</span>
-<br />
-<strong>Computer: </strong><span id="computerScore">0</span>
-</div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <br />
+                <button class="btn btn-danger btn-block btn-tracker" data-tag="rock"><i class="fa fa-hand-rock-o fa-5x"></i></button>
+            </div>
+            <div class="col-md-3">
+                <br />
+                <button class="btn btn-warning btn-block btn-tracker" data-tag="paper"><i class="fa fa-hand-paper-o fa-5x"></i></button>
+            </div>
+            <div class="col-md-3">
+                <br />
+                <button class="btn btn-success btn-block btn-tracker" data-tag="scissors"><i class="fa fa-hand-scissors-o fa-5x"></i></button>
+            </div>
+            <div class="col-md-3" id="scoreboard">
+                <h2>Scoreboard</h2>
+                <br />
+                <strong>Round #: </strong><span id="roundCount">0</span>
+                <br />
+                <strong>You: </strong><span id="userScore">0</span>
+                <br />
+                <strong>Computer: </strong><span id="computerScore">0</span>
+            </div>
 
-<div class="row">
-<div class="col-md-12">
-        	 <table id="leaderboardTable">
-    <tr>
-      <th>Player</th>
-      <th>Score</th>
-    </tr>
-    <tr>
-    	<td><input class="example-leaderboard-name" type="text" id="nameInput" placeholder="Enter a name"></td>
-    	<td><input class="example-leaderboard-score" type="text" id="scoreInput" placeholder="Record your score..."></td>
-    </tr>
-  </table>
-  
- </div>
- </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="leaderboardTable">
+                        <tr>
+                            <th>Player</th>
+                            <th>Score</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="example-leaderboard-name" type="text" id="nameInput" placeholder="Enter a name">
+                            </td>
+                            <td>
+                                <input class="example-leaderboard-score" type="text" id="scoreInput" placeholder="Record your score...">
+                            </td>
+                        </tr>
+                    </table>
 
- <!-- row end -->
-	</div> <!-- container end -->
+                </div>
+            </div>
+
+            <!-- row end -->
+        </div>
+        <!-- container end -->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Game Alert</h4>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/toggleStates.js"></script>
-<script type="text/javascript" src="js/rockPaperScissors.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <!-- <script type="text/javascript" src="js/toggleStates.js"></script> -->
+        <script type="text/javascript" src="js/rockPaperScissors.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+        <script type="text/javascript" src="js/leaderboard.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,15 @@
-.btn {
+* {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+
+#scoreboard {
+	padding: 15px;
+	font-size: 20px;
+}
+
+.btn-tracker {
 
 	border-radius: 50%;
 	width: 150px;
@@ -7,19 +18,12 @@
 
 }
 
-.btn-default {
-
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-
-}
-
 input[type="text"] {
   padding: 10px;
   border: solid 3px gray;
   transition: border 0.3s;
 }
+
 input[type="text"]:focus,
 input[type="text"].focus {
   border: solid 3px gold;
